@@ -13,9 +13,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import controller.HouseFactory;
+import controller.littleLanguage.Token.CMD;
 import controller.littleLanguage.command.AllRoomsAllDevices;
 import controller.littleLanguage.command.Command;
-import controller.littleLanguage.command.Command.Action;
 
 public class AllRoomsAllDevicesTest
 {
@@ -27,7 +27,7 @@ public class AllRoomsAllDevicesTest
 	public void setup()
 	{
 		((AllRoomsAllDevices)AFAD).setHouse(house);
-		((AllRoomsAllDevices)AFAD).setAction(Action.TURN_ON);
+		((AllRoomsAllDevices)AFAD).setAction(Command.makeActionFromCMD(CMD.TURN_ON));
 	}
 	@Test
 	public void testExecute()

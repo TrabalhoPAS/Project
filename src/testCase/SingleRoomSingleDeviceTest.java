@@ -10,7 +10,7 @@ import org.junit.Test;
 import controller.HouseFactory;
 import controller.littleLanguage.command.Command;
 import controller.littleLanguage.command.SingleRoomSingleDevice;
-import controller.littleLanguage.command.Command.Action;
+import controller.littleLanguage.Token.CMD;
 
 public class SingleRoomSingleDeviceTest {
 
@@ -29,7 +29,7 @@ public class SingleRoomSingleDeviceTest {
 		this.deviceName = ((SingleRoomSingleDevice) SRSD).getDeviceName();
 		this.roomName = ((SingleRoomSingleDevice) SRSD).getRoomName();
 		this.floor = ((SingleRoomSingleDevice) SRSD).getFloorNumber();
-		SRSD.setAction(Action.TURN_ON);
+		SRSD.setAction(Command.makeActionFromCMD(CMD.TURN_ON));
 	}
 	
 	@Test

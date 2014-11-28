@@ -12,9 +12,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import controller.HouseFactory;
+import controller.littleLanguage.Token.CMD;
 import controller.littleLanguage.command.AllRoomsSingleDevice;
 import controller.littleLanguage.command.Command;
-import controller.littleLanguage.command.Command.Action;
 
 public class AllRoomsSingleDeviceTest
 {
@@ -28,7 +28,7 @@ public class AllRoomsSingleDeviceTest
 		((AllRoomsSingleDevice)ARSD).setHouse(house);
 		((AllRoomsSingleDevice)ARSD).setDeviceName("Luz");
 		deviceName = ((AllRoomsSingleDevice)ARSD).getDeviceName();
-		((AllRoomsSingleDevice)ARSD).setAction(Action.TURN_ON);
+		((AllRoomsSingleDevice)ARSD).setAction(Command.makeActionFromCMD(CMD.TURN_ON));
 	}
 	
 	@Test

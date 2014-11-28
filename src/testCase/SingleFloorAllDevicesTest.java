@@ -15,7 +15,7 @@ import org.junit.Test;
 import controller.HouseFactory;
 import controller.littleLanguage.command.Command;
 import controller.littleLanguage.command.SingleFloorAllDevices;
-import controller.littleLanguage.command.Command.Action;
+import controller.littleLanguage.Token.CMD;
 
 
 
@@ -30,7 +30,7 @@ public class SingleFloorAllDevicesTest
 	{
 		((SingleFloorAllDevices) SFAD).setFloorNumber(1);
 		((SingleFloorAllDevices) SFAD).setHouse(house);
-		SFAD.setAction(Action.TURN_ON);
+		SFAD.setAction(Command.makeActionFromCMD(CMD.TURN_ON));
 	}
 	
 	@Test

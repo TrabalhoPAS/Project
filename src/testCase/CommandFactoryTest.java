@@ -9,7 +9,6 @@ import org.junit.Test;
 import controller.HouseFactory;
 import controller.littleLanguage.CommandArgs;
 import controller.littleLanguage.Parser;
-import controller.littleLanguage.Parser.Kind;
 import controller.littleLanguage.command.AllOfRoomSingleDevice;
 import controller.littleLanguage.command.AllRoomsAllDevices;
 import controller.littleLanguage.command.AllRoomsSingleDevice;
@@ -19,11 +18,12 @@ import controller.littleLanguage.command.SingleFloorSingleDevice;
 import controller.littleLanguage.command.SingleRoomAllDevices;
 import controller.littleLanguage.command.SingleRoomSingleDevice;
 import controller.littleLanguage.SyntaxErrorException;
+import controller.littleLanguage.Parser.Scope;
 
 public class CommandFactoryTest
 {
 	
-	private Parser.Kind deviceKindAll, deviceKindSingle, roomKindSingle, roomKindAll, roomKindFloor,roomKindAllOfType;
+	private Parser.Scope deviceScopeAll, deviceScopeSingle, roomScopeSingle, roomScopeAll, roomScopeFloor,roomScopeAllOfType;
 	private CommandArgs args = new CommandArgs();
 	private String deviceName = "Luz";
 	private String roomName = "Quarto";
@@ -33,12 +33,12 @@ public class CommandFactoryTest
 	@Before
 	public void setup()
 	{
-		this.deviceKindSingle =Kind.Single;
-		this.deviceKindAll = Kind.All;
-		this.roomKindSingle = Kind.Single;
-		this.roomKindFloor = Kind.Floor;
-		this.roomKindAll = Kind.All;
-		this.roomKindAllOfType = Kind.AllOfType;
+		this.deviceScopeSingle = Scope.Single;
+		this.deviceScopeAll = Scope.All;
+		this.roomScopeSingle = Scope.Single;
+		this.roomScopeFloor = Scope.Floor;
+		this.roomScopeAll = Scope.All;
+		this.roomScopeAllOfType = Scope.AllOfType;
 		this.args.setDeviceName(this.deviceName);
 		this.args.setHouse(house);
 		this.args.setDeviceName(this.deviceName);
@@ -53,19 +53,19 @@ public class CommandFactoryTest
 		try
 		{
 			System.out.println("Verificando a criacao de comandos do CommadFactory...");
-			assertTrue(cmd.createCommand(this.deviceKindSingle, this.roomKindSingle, args) instanceof SingleRoomSingleDevice);
+			assertTrue(cmd.createCommand(this.deviceScopeSingle, this.roomScopeSingle, args) instanceof SingleRoomSingleDevice);
 			System.out.println("Criado o comando SRSD;");
-			assertTrue(cmd.createCommand(this.deviceKindSingle, this.roomKindAll, args) instanceof AllRoomsSingleDevice);
+			assertTrue(cmd.createCommand(this.deviceScopeSingle, this.roomScopeAll, args) instanceof AllRoomsSingleDevice);
 			System.out.println("Criado o comando ARSD;");
-			assertTrue(cmd.createCommand(this.deviceKindSingle, this.roomKindFloor, args) instanceof SingleFloorSingleDevice);
+			assertTrue(cmd.createCommand(this.deviceScopeSingle, this.roomScopeFloor, args) instanceof SingleFloorSingleDevice);
 			System.out.println("Criado o comando SFSD;");
-			assertTrue(cmd.createCommand(this.deviceKindSingle, this.roomKindAllOfType, args) instanceof AllOfRoomSingleDevice);
+			assertTrue(cmd.createCommand(this.deviceScopeSingle, this.roomScopeAllOfType, args) instanceof AllOfRoomSingleDevice);
 			System.out.println("Criado o comando AORSD;");
-			assertTrue(cmd.createCommand(this.deviceKindAll, this.roomKindAll, args) instanceof AllRoomsAllDevices);
+			assertTrue(cmd.createCommand(this.deviceScopeAll, this.roomScopeAll, args) instanceof AllRoomsAllDevices);
 			System.out.println("Criado o comando ARAD;");
-			assertTrue(cmd.createCommand(this.deviceKindAll, this.roomKindFloor, args) instanceof SingleFloorAllDevices);
+			assertTrue(cmd.createCommand(this.deviceScopeAll, this.roomScopeFloor, args) instanceof SingleFloorAllDevices);
 			System.out.println("Criado o comando SFAD;");
-			assertTrue(cmd.createCommand(this.deviceKindAll, this.roomKindSingle, args) instanceof SingleRoomAllDevices);
+			assertTrue(cmd.createCommand(this.deviceScopeAll, this.roomScopeSingle, args) instanceof SingleRoomAllDevices);
 			System.out.println("Criado o comando SRAD.");
 			System.out.println("Verificação concluída com sucesso.\n");
 		}catch (SyntaxErrorException e)

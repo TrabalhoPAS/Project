@@ -14,7 +14,7 @@ import org.junit.Test;
 import controller.HouseFactory;
 import controller.littleLanguage.command.Command;
 import controller.littleLanguage.command.SingleRoomAllDevices;
-import controller.littleLanguage.command.Command.Action;
+import controller.littleLanguage.Token.CMD;
 
 public class SingleRoomAllDevicesTest {
 	Command SRAD = new SingleRoomAllDevices();
@@ -30,7 +30,7 @@ public class SingleRoomAllDevicesTest {
 		((SingleRoomAllDevices) SRAD).setFloor(1);
 		this.roomName = ((SingleRoomAllDevices) SRAD).getRoomName();
 		this.floor = ((SingleRoomAllDevices) SRAD).getFloor();
-		SRAD.setAction(Action.TURN_ON);
+		SRAD.setAction(Command.makeActionFromCMD(CMD.TURN_ON));
 	}
 	
 	@Test

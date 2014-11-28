@@ -15,7 +15,7 @@ import org.junit.Before;
 import controller.HouseFactory;
 import controller.littleLanguage.command.Command;
 import controller.littleLanguage.command.SingleFloorSingleDevice;
-import controller.littleLanguage.command.Command.Action;
+import controller.littleLanguage.Token.CMD;
 
 public class SingleFloorSingleDeviceTest
 {
@@ -31,7 +31,7 @@ public class SingleFloorSingleDeviceTest
 		((SingleFloorSingleDevice) SFSD).setFloorNumber(1);
 		this.floor = ((SingleFloorSingleDevice) SFSD).getFloorNumber();
 		this.DeviceName = ((SingleFloorSingleDevice) SFSD).getDeviceName();
-		SFSD.setAction(Action.TURN_ON);
+		SFSD.setAction(Command.makeActionFromCMD(CMD.TURN_ON));
 	}
 	@Test
 	public void testExecute() {

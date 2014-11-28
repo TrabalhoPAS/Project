@@ -12,9 +12,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import controller.HouseFactory;
+import controller.littleLanguage.Token.CMD;
 import controller.littleLanguage.command.AllOfRoomSingleDevice;
 import controller.littleLanguage.command.Command;
-import controller.littleLanguage.command.Command.Action;
 
 public class AllOfRoomSingleDeviceTest
 {
@@ -31,7 +31,7 @@ public class AllOfRoomSingleDeviceTest
 		((AllOfRoomSingleDevice)AORSD).setRoomName("Quarto");
 		this.deviceName = ((AllOfRoomSingleDevice)AORSD).getDeviceName();
 		this.roomName = ((AllOfRoomSingleDevice)AORSD).getRoomName();
-		((AllOfRoomSingleDevice)AORSD).setAction(Action.UNLOCK);
+		((AllOfRoomSingleDevice)AORSD).setAction(Command.makeActionFromCMD(CMD.UNLOCK));
 	}
 	
 	@Test
