@@ -18,7 +18,7 @@ public class AllOfRoomSingleDevice extends Command
 		while (it.hasNext())
 		{
 			IF_Room room = it.next();
-			if (room.getName().equals(roomName))
+			if (room.getName().startsWith(roomName))
 			{
 				try
 				{

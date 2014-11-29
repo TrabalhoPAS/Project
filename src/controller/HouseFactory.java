@@ -30,10 +30,16 @@ public class HouseFactory implements IF_HouseFactory
 			house.getRoom("Quarto", 0).addDevice(IF_Device.Type.SWITCH, "Luz");
 			house.getRoom("Quarto", 0).addDevice(IF_Device.Type.DOOR, "Porta");
 			
-			house.addRoom("Quarto", 1);
-			house.getRoom("Quarto", 1).addDevice(IF_Device.Type.SWITCH, "Luz");
-			house.getRoom("Quarto", 1).addDevice(IF_Device.Type.DOOR, "Porta");
-			house.getRoom("Quarto", 1).addDevice(IF_Device.Type.GRADABLE, "Ar");
+			house.addRoom("QuartoSolteiro", 1);
+			house.getRoom("QuartoSolteiro", 1).addDevice(IF_Device.Type.SWITCH, "Luz");
+			house.getRoom("QuartoSolteiro", 1).addDevice(IF_Device.Type.DOOR, "Porta");
+			house.getRoom("QuartoSolteiro", 1).addDevice(IF_Device.Type.GRADABLE, "Ar");
+			
+			house.addRoom("QuartoCasal", 1);
+			room = house.getRoom("QuartoCasal", 1);
+			room.addDevice(IF_Device.Type.SWITCH, "Luz");
+			room.addDevice(IF_Device.Type.DOOR, "Porta");
+			room.addDevice(IF_Device.Type.GRADABLE, "Ar");
 		}
 		catch (Exception e){}
 		
