@@ -55,14 +55,14 @@ public class HouseFactory implements IF_HouseFactory
 	{
 		switch (type)
 		{
-		case SWITCH:
-			return new model.Switch(room, name);
-		case DOOR:
-			return new model.Door(room, name);
-		case GRADABLE:
-			return new model.Gradable(room, name);
-		default:
-			return null;
+			case SWITCH:
+				return new model.Switch(room, name);
+			case DOOR:
+				return new model.Door(room, name);
+			case GRADABLE:
+				return new model.Gradable(room, name);
+			default:
+				return null;
 		}
 		
 	}

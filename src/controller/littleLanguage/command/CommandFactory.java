@@ -93,9 +93,6 @@ public class CommandFactory
 			case All:
 				return new AllRoomsAllDevices();
 				
-			case AllOfType:
-				return null;
-				
 			case Floor:
 				return createSFAD(args);
 				
