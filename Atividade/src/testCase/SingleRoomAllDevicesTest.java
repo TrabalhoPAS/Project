@@ -26,7 +26,7 @@ public class SingleRoomAllDevicesTest {
 	public void setup()
 	{
 		((SingleRoomAllDevices) SRAD).setHouse(house);
-		((SingleRoomAllDevices) SRAD).setRoomName("Quarto");
+		((SingleRoomAllDevices) SRAD).setRoomName("QuartoCasal");
 		((SingleRoomAllDevices) SRAD).setFloor(1);
 		this.roomName = ((SingleRoomAllDevices) SRAD).getRoomName();
 		this.floor = ((SingleRoomAllDevices) SRAD).getFloor();

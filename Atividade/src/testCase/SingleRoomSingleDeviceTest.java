@@ -24,7 +24,7 @@ public class SingleRoomSingleDeviceTest {
 	{
 		((SingleRoomSingleDevice) SRSD).setDeviceName("Luz");
 		((SingleRoomSingleDevice) SRSD).setFloorNumber(1);
-		((SingleRoomSingleDevice) SRSD).setRoomName("Quarto");
+		((SingleRoomSingleDevice) SRSD).setRoomName("QuartoSolteiro");
 		((SingleRoomSingleDevice) SRSD).setHouse(house);
 		this.deviceName = ((SingleRoomSingleDevice) SRSD).getDeviceName();
 		this.roomName = ((SingleRoomSingleDevice) SRSD).getRoomName();
